@@ -1,0 +1,45 @@
+<%- include('../partials/header')%>
+<div>
+<h1 style="text-align: center" class="text-success">Payment Succesfull!!</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Yelp Camp</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info-1</li>
+                <li class="list-group-item">Temperature: 54.73'F</li>
+                <li class="list-group-item">Weather: few clouds</li>
+                <li class="list-group-item">Wind: 10.29m/s</li>
+            </div>
+        <img class="img-responsive thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSE9Kd3QhMDHX0b_0xR_xabkzs-lpN5CUIbjQ&usqp=CAU">
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail" id="full">
+                <img class="img-responsive" src="<%= campground.image%>">
+                <div class="caption-full">
+                    <!--<h4 class="pull-right">$<%= campground.price%>/night</h4>-->
+                    <!--<button class="pull-right btn btn-info">$<%= campground.price%>/night</button>-->
+                    <p><a href="/campgrounds/<%= campground._id %>/payment" class="pull-right btn btn-info">₹ <%= campground.price%>/night</a></p>
+                    
+                    <h4><a><%= campground.title%></a></h4>
+                    <p><%= campground.description%></p>
+                    <p><a href="/campgrounds" class="pull-right btn btn-success">VIEW OTHER CAMPGROUNDS</a></p>
+                    <p><em>Submitted by
+                    <%= campground.author.username %></em>
+                    </p>
+                    <!--<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>-->
+                    <!--<a class="btn btn-xs btn-warning" href="/campgrounds/<%=campground._id%>/edit">Edit</a>-->
+                    <!--<form id="delete_form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">-->
+                    <!--    <button class="btn btn-xs btn-danger">DELETE</button>-->
+                    <!--</form>-->
+                    <!--<% }%>-->
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer')%>
